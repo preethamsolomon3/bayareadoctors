@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav>
+          <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to "BAY AREA DOCTORS", '#' %></li>
+          </ul>
+        </nav>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",   root_path %></li>
+            <li><%= link_to "Help",   help_path %></li>
+              <% if user_signed_in? %>
+                <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                Logged in as <strong><%= current_user.email %></strong>.
+              <% else %>
+                <li><%= link_to "Sign up", new_user_registration_path %></li>
+                <li><%= link_to "Login", new_user_session_path %></li>
+              <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <footer class="footer">
+      <small>
+        <a href="http://www.railstutorial.org/">Bay Area Doctors</a>
+      </small>
+      <nav>
+        <ul>
+          <li><%= link_to "About",   about_path %></li>
+          <li><%= link_to "Contact", contact_path %></li>
+          <li><a href="http://news.railstutorial.org/">News</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+  </body>
+</html>
+

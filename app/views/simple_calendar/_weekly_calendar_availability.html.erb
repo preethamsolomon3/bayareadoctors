@@ -1,0 +1,8 @@
+<%= week_calendar events: availability_periods do |date, availability_periods| %>
+  
+  <% availability_periods.each do |availability_period| %>
+    <div class="availability highlight" style="<%= availability_position(availability_period) %> <%= availability_height(availability_period) %>">
+      <%= link_to "avail", edit_availability_period_path(availability_period) %>
+    </div>
+  <% end %>
+<% end %>
