@@ -144,24 +144,24 @@ td .quarter:nth-child(51):before {
     content: "8:30";
 }
 
-td .appointment {
+td .availability {
     position: absolute;
     height: 1px;
     width: 74.5%;
-    margin-left: 16%;
+    margin-left: 5%;
     background: rgba(255, 192, 203, 0.85);
     content: " ";
     text-align: center;
     font-size: 85%;
 }
 
-td .appointment a {
+td .availability a {
     display: block;
     width: 100%;
     height: 100%;
 }
 
-.appointment.highlight {
+.availability.highlight {
     background: hotpink;
 }
 
