@@ -4,17 +4,29 @@
   <% if user_signed_in? %>
 
     <% if current_user.client? %>
-      <li> client account </li>
+
+      <div class="row">
+        
+        <div class="col-md-4">
+        </div>
+
+        <div class="col-md-8">
+          <%= add_consultation_scheduler(@timeslots) %>
+        </div>
+
+      </div>
+
     <% else %>
 
       <div class="row">
+
         <div class="col-md-4">
           <h2>New Availability</h2>
           <%= link_to "Schedule New Availability", new_availability_period_path, :class => 'navbar-link'  %>
         </div> 
 
         <div class="col-md-8">
-          <%= add_weekly_calendar(@availability_periods) %>
+          <%= add_weekly_availability_calendar(@availability_periods) %>
         </div>
  
       </div>
@@ -28,4 +40,3 @@
   <% end %>
 
 </div>
-

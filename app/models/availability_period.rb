@@ -1,5 +1,6 @@
 class AvailabilityPeriod < ApplicationRecord
   #belongs_to :user
+  INTERVAL=20
 
   ## Validations
 

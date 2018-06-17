@@ -1,0 +1,9 @@
+<%= week_calendar events: timeslots do |date, timeslots| %>
+  
+  <% timeslots.each do |timeslot| %>
+    <div class="timeslot highlight" style="<%= timeslot_position(timeslot) %> <%= timeslot_height(timeslot) %>">
+      <%= link_to "sched", new_consultation_path(start_time: timeslot.start_time, end_time: timeslot.end_time)  %>
+    </div>
+  <% end %>
+
+<% end %>

@@ -1,6 +1,6 @@
 module AvailabilityPeriodsHelper
 
-  def add_weekly_calendar(availability_periods)
+  def add_weekly_availability_calendar(availability_periods)
     render partial: "simple_calendar/weekly_calendar_availability", locals: { availability_periods: availability_periods }
   end
 
