@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @consultation.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @consultation.end_time %>
+</p>
+
+<%= link_to 'Edit', edit_consultation_path(@consultation) %> |
+<%= link_to 'Back', consultations_path %>

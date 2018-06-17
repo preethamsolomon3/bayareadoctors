@@ -1,0 +1,27 @@
+<%= form_with(model: consultation, local: true) do |form| %>
+  <% if consultation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(consultation.errors.count, "error") %> prohibited this consultation from being saved:</h2>
+
+      <ul>
+      <% consultation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
